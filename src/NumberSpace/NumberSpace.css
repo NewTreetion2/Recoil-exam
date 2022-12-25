@@ -1,4 +1,16 @@
 .numberSpace {
-    width: 100vw;
-    height: 500px;
+    display: flex;
+    justify-content: space-around;
+    font-size: 24px;
+    letter-spacing: 20px;
+}
+
+.numberA {
+    width: 30vw;
+    height: 150px;
+}
+
+.numberB {
+    width: 30vw;
+    height: 150px;
 }

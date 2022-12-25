@@ -1,45 +1,26 @@
-import { useState } from 'react';
-import {
-    atom, useRecoilState
+import {  useRecoilValue
   } from 'recoil';
 import "./NumberSpace.css"
-
-const numberState = atom({
-    key: 'numberState',
-    default: [],
-});
+import { NumberA, NumberB, TotalNumberA, TotalNumberB } from '../atoms';
 
 function NumberSpace() {
-  const [inputNumber, setInputNumber] = useState('');
-  const [NumberList, setNumberList] = useRecoilState(numberState);
-
-  const addNumber = () => {
-    setNumberList((oldNumberList) => [
-      ...oldNumberList,
-      {
-        id: getID(),
-        number: inputNumber
-      },
-    ]);
-    setInputNumber('');
-  };
-
-  const onChange = ({target: {value}}) => {
-    setInputNumber(value);
-  }
+  const numA = useRecoilValue(NumberA)
+  const numB = useRecoilValue(NumberB)
+  const totalA = useRecoilValue(TotalNumberA)
+  const totalB = useRecoilValue(TotalNumberB)
 
   return(
     <div className='numberSpace'>
-      <input type="text" value={inputNumber} onChange={onChange} />
-      <button onClick={addNumber}>Add</button>
-      <button onClick={console.log({NumberList})}>Show List</button>
+      <div className='numberA'>
+        <div>A = {numA}</div>
+        <div>A total = {totalA}</div>
+      </div>
+      <div className='numberB'>
+        <div>B = {numB}</div>
+        <div>B total = {totalB}</div>
+      </div>
     </div>
-  );
-}
-
-let id = 0;
-function getID() {
-  return id++;
+  )
 }
 
 export default NumberSpace;

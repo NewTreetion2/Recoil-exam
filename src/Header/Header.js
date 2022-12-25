@@ -1,8 +1,12 @@
 import "./Header.css"
+import Button from "./Button"
 
 function Header() {
+    const BtnType = ["increaseA", "decreaseA", "increaseB", "decreaseB", "total"]
     return <div className="header">
-        111
+        {BtnType.map((item) => {
+           return <Button type={item} />
+        })}
     </div>
 }
 
