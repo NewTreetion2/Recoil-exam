@@ -13,14 +13,10 @@ key: 'numberB',
 default: [5,6,7,8]
 })
 
-const TotalNumberA = atom({
+const TotalNumber = atom({
   key: 'TotalNumberA',
-  default: 0
+  default: [0,0],
 })
 
-const TotalNumberB = atom({
-  key: 'TotalNumberB',
-  default: 0
-})
 
-export {NumberA, NumberB, TotalNumberA, TotalNumberB}
+export {NumberA, NumberB, TotalNumber}
