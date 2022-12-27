@@ -2,4 +2,7 @@
     width: 100vw;
     height: 50px;
     background-color: #24292f;
+    display: flex;
+    gap: 30px;
+    align-items: center;
 }

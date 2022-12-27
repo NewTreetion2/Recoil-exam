@@ -8,7 +8,6 @@ function NumberSpace() {
   const numB = useRecoilValue(NumberB)
   const total = useRecoilValue(TotalNumber)
 
-
   return(
     <div className='numberSpace'>
       <div className='numberA'>

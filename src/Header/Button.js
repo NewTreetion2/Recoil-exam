@@ -1,5 +1,6 @@
 import { NumberA, NumberB, TotalNumber } from "../atoms";
 import { selector, useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
+import "./Button.css"
 
 const totalCalculator = selector({
     key: 'totalCalculator',
@@ -54,7 +55,7 @@ function Button({type}) {
         case "decreaseB":
             return <button onClick={DecreaseB}>B - 1</button>
         case "total":
-            return <button onClick={Total}>total</button>
+            return <button onClick={Total}>TOTAL</button>
         default: 
     }
 }
