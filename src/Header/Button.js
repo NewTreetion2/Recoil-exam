@@ -1,6 +1,7 @@
 import { NumberA, NumberB, TotalNumber } from "../atoms";
 import { selector, useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 import "./Button.css"
+import { Link } from "react-router-dom";
 
 const totalCalculator = selector({
     key: 'totalCalculator',
@@ -56,6 +57,8 @@ function Button({type}) {
             return <button onClick={DecreaseB}>B - 1</button>
         case "total":
             return <button onClick={Total}>TOTAL</button>
+        case "second_project":
+            return <Link to={"/second_project"}><button>Second_Project</button></Link>
         default: 
     }
 }
