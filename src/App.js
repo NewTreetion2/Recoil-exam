@@ -11,11 +11,12 @@ function App() {
   return(
   <RecoilRoot>
     <Routes>
-      <Route path='/' element={<>
-      <Header />
+      <Route exact path='/' element={<>
+      <Header PageDetail="NumberSpace"/>
       <NumberSpace />
       </>}></Route>
       <Route path='/second_project' element={<>
+      <Header PageDetail="SecondProject" />
       <SecondProject />
       </>}></Route>
     </Routes>

@@ -1,0 +1,14 @@
+.SecondSpace {
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+    letter-spacing: 20px;
+}
+
+.Second_NumberSpace {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 50px;
+    height: 300px;
+}

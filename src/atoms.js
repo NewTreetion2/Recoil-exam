@@ -18,5 +18,19 @@ const TotalNumber = atom({
   default: [0,0],
 })
 
+const SecondNumberA = atom({
+  key: 'SecondNumberA',
+  default: [0]
+})
 
-export {NumberA, NumberB, TotalNumber}
+const SecondNumberB = atom({
+  key: 'SecondNumberB',
+  default: [0]
+})
+
+const SecondTotal = atom({
+  key: 'SecondTotal',
+  default: 0
+})
+
+export {NumberA, NumberB, TotalNumber, SecondNumberA, SecondNumberB, SecondTotal}
