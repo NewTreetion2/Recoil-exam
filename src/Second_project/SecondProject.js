@@ -1,18 +1,35 @@
-import { useRecoilValue } from "recoil"
-import { SecondNumberA, SecondNumberB, SecondTotal } from "../atoms"
+import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil"
+import { numberCalculator, numbers, total } from "../atoms"
+import { useState } from "react";
 import "./SecondProject.css"
 
 function SecondProject() {
-    const SecondA = useRecoilValue(SecondNumberA)
-    const SecondB = useRecoilValue(SecondNumberB)
-    const S_Total = useRecoilValue(SecondTotal)
+    const [inputText, setInputText] = useState('');
+    const [inputNumber, setInputNumber] = useState(0);
+    const numberOb = useRecoilValue(numbers);
+    const totalValue = useRecoilValue(total);
+    const calculatorDispatch = useSetRecoilState(numberCalculator)
+    const func = () => {
+        calculatorDispatch({
+            type: 'a',
+            value: -1
+        })
+    }
 
     return(
     <div className='SecondSpace'>
         <div className='Second_NumberSpace'>
-            <div>A = {SecondA}</div>
-            <div>B = {SecondB}</div>
-            <div>Total = {S_Total}</div> 
+            <div onClick={func}>A = {numberOb.a}</div>
+            <div>B = {numberOb.b}</div>
+            <div>Total = {totalValue}</div> 
+            <input type="text" value={inputText} onChange={(e) => {
+                setInputText(e.target.value)
+            }}></input>
+            <p>{inputText}</p>
+            <input type="number" value={inputNumber} onChange={(e) => {
+                setInputNumber(e.target.value)
+            }}></input>
+            <p>{inputNumber}</p>
         </div>
     </div>
     )
